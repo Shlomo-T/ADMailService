@@ -12,6 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MailFraudService", "src\MailFraudService\MailFraudService.xproj", "{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{493ED98B-4D60-4839-9384-B0E69A553549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDriver", "DBDriver\DBDriver.csproj", "{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLManager", "MLManager\MLManager.csproj", "{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +28,21 @@ Global
 		{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4} = {15172561-F651-4639-922B-AEB7DE16C44F}
+		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677} = {493ED98B-4D60-4839-9384-B0E69A553549}
+		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7} = {493ED98B-4D60-4839-9384-B0E69A553549}
 	EndGlobalSection
 EndGlobal
