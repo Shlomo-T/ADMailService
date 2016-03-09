@@ -11,5 +11,22 @@ namespace MLManager
         /**
             This class will implement all the text manipulations using regex & other methods
         **/
+
+        public static List<string> TextToSentence(string text)
+        {
+            List<string> ans = null;
+            if (text.Length > 0)
+            {
+                ans = new List<string>(text.Split('\n'));
+                while (ans.Contains(""))
+                {
+                    ans.Remove("");
+                }
+            }
+
+            return ans;
+        }
+
+
     }
 }
