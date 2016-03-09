@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{15172561-F651-4639-922B-AEB7DE16C44F}"
 EndProject
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDriver", "DBDriver\DBDriver.csproj", "{2CA0B2F2-634A-41F9-97E0-7C021C5F0677}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLManager", "MLManager\MLManager.csproj", "{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
