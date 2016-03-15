@@ -15,7 +15,7 @@ namespace MLManager
 
 
             /*
-                Remove new lines frm the text and then spliting by dot
+                Remove new lines from the text and then spliting by dot
               */
 
         public static void  Analyze(string txt)
@@ -24,56 +24,60 @@ namespace MLManager
         }
 
 
-        public static ICollection<string> SplitByDot(string txt)
+        public static List<string> SplitByDot(string txt)
         {
 
-            ICollection<string> ans = null;
+            List<string> ans = null;
             if (!string.IsNullOrEmpty(txt))
             {
                 txt.Replace("\n", string.Empty);
-                ans = txt.Split('.');
+                ans = txt.Split('.').ToList();
+                for (int i = 0; i < ans.Count; i++)
+                {
+                    ans[i] = ans[i].Trim();
+                }
+
+                while (ans.Contains(""))
+                {
+                    ans.Remove("");
+                }
             }
             return ans;
         }
 
         /*
-            Spliting the words using regex and counting them
+            Counting each word
         */
-        public static Dictionary<string,int> CountWords(string txt)
+        public static Dictionary<string, int> CountWords(List<List<string>> WordsPerSentenceList)
         {
-            Dictionary<string, int> wordsDic = null;
-            if (!string.IsNullOrEmpty(txt))
+            Dictionary<string, int> wordsDic = new Dictionary<string, int>();
+            foreach (var sentence in WordsPerSentenceList)
             {
-                Regex wordsRegex = new Regex(@"\w+");
-                MatchCollection matchesList = wordsRegex.Matches(txt);
-                if(matchesList!=null && matchesList.Count > 0)
+                foreach (var word in sentence)
                 {
-                    wordsDic = new Dictionary<string, int>();
-                    foreach( Match match in matchesList)
+                    if (!wordsDic.ContainsKey(word))
                     {
-                        var word = match.Value;
-                        if (!string.IsNullOrEmpty(word))
-                        {
-                            if (wordsDic.ContainsKey(word))
-                            {
-                                wordsDic[word]++;
-                                continue;
-                            }
-                            wordsDic.Add(word, 1);
-                        }
+                        wordsDic.Add(word, 1);
+                    }
+                    else
+                    {
+                        wordsDic[word]++;
                     }
                 }
             }
+
             return wordsDic;
         }
 
-        
 
 
-        public static List<string> TextToSentence(string text)
+        /* 
+             split the text by new line 
+        */
+        public static List<string> SplitByNewLine(string text)
         {
             List<string> ans = null;
-            if (text.Length > 0)
+            if (!string.IsNullOrEmpty(text))
             {
                 ans = new List<string>(text.Split('\n'));
                 while (ans.Contains(""))
@@ -85,6 +89,72 @@ namespace MLManager
             return ans;
         }
 
+        public static List<List<string>> WordsPerSentence(List<string> SentenceList)
+        {
+            List<List<string>> WordsList = new List<List<string>>();
+            foreach (string sentence in SentenceList)
+            {
+                List<string> temp = new List<string>(sentence.Split(' '));
+                WordsList.Add(temp);
+            }
 
+            for (int i = 0; i < WordsList.Count; i++)
+            {
+                for (int j = 0; j < WordsList[i].Count; j++)
+                {
+                    Regex Reg = new Regex(@"[\w\d,.;:]+");
+                    Match Mat = Reg.Match(WordsList[i][j]);
+                    if (Mat != null && Mat.Success)
+                    {
+                        WordsList[i][j] = Mat.Value.ToString();
+                    }
+                    while (WordsList[i].Contains(""))
+                    {
+                        WordsList[i].Remove("");
+                    }
+
+                }
+            }
+            return WordsList;
+        }
+
+        public static double GetSentenceAVG(List<List<string>> WordsPerSentenceList)
+        {
+            double sum = 0;
+            foreach (var sentence in WordsPerSentenceList)
+            {
+                sum += sentence.Count;
+            }
+
+            return sum / WordsPerSentenceList.Count;
+        }
+
+        public static double GetWordAVG(Dictionary<string, int> WordsDict)
+        {
+            double CharCount = 0;
+            double TotalWordsCount = 0;
+            foreach (var word in WordsDict.Keys)
+            {
+                CharCount += word.Length * WordsDict[word];
+                TotalWordsCount += WordsDict[word];
+            }
+
+            return CharCount / TotalWordsCount;
+        }
+
+        public static double GetTokenRatio(Dictionary<string, int> WordsDict)
+        {
+            double NumberOfKeys = WordsDict.Keys.Count;
+            double TotalWordsCount = 0;
+            foreach (var word in WordsDict.Keys)
+            {
+                TotalWordsCount += WordsDict[word];
+            }
+
+            return NumberOfKeys / TotalWordsCount;
+        }
     }
+
+
+    
 }

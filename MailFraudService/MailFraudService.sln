@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDriver", "DBDriver\DBDriv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLManager", "MLManager\MLManager.csproj", "{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,10 +36,6 @@ Global
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9D436EA-39B2-4A4D-BBA5-FD87D0E585C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
