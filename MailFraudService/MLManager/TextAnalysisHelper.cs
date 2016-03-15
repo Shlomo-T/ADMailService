@@ -1,9 +1,11 @@
-﻿using System;
+﻿using NHunspell;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 
 namespace MLManager
 {
@@ -153,6 +155,16 @@ namespace MLManager
 
             return NumberOfKeys / TotalWordsCount;
         }
+
+
+       /* public static bool CheckSpell(string word)
+        {
+            // todo : replace Hunspell with 'How to: Use COM Interop to Check Spelling Using Word (C#)'
+            using (Hunspell hunspell = new Hunspell("en_GB.aff", "en_GB.dic"))
+            {
+                return hunspell.Spell(word);
+            }
+        }*/
     }
 
 
