@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-
+    //Just an angular test
     angular
         .module('app')
         .controller('Appcontroller', Appcontroller);
