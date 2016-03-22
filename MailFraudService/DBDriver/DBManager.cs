@@ -41,11 +41,11 @@ namespace DBDriver
                 // Get connectionstring from Web.Config
                 MySqlConnectionStringBuilder tBuild = new MySqlConnectionStringBuilder();
 
-                tBuild.Server = GetConfig("DBServer");
-                tBuild.Port = Convert.ToUInt32(GetConfig("DBPort"));
-                tBuild.UserID = GetConfig("DBUser");
-                tBuild.Password = GetConfig("DBPass");
-                tBuild.Database = GetConfig("DBDatabase");
+                tBuild.Server = "localhost";//GetConfig("DBServer");
+                tBuild.Port = 3306;//Convert.ToUInt32(GetConfig("DBPort"));
+                tBuild.UserID = "root";//GetConfig("DBUser");
+                tBuild.Password = "vcGN2108@";//GetConfig("DBPass");
+                tBuild.Database = "enron";//GetConfig("DBDatabase");
 
                 tBuild.Pooling = true;
                 tBuild.MinimumPoolSize = 4;

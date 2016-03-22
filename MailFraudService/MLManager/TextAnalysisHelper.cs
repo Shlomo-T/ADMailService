@@ -16,16 +16,16 @@ namespace MLManager
         **/
 
 
-            /*
-                Remove new lines from the text and then spliting by dot
-              */
+
 
         public static void  Analyze(string txt)
         {
 
         }
 
-
+        /*
+             Remove new lines from the text and then spliting by dot
+        */
         public static List<string> SplitByDot(string txt)
         {
 
@@ -74,7 +74,7 @@ namespace MLManager
 
 
         /* 
-             split the text by new line 
+             Split the text by new line 
         */
         public static List<string> SplitByNewLine(string text)
         {
