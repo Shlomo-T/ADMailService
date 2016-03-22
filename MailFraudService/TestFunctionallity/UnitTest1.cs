@@ -18,7 +18,7 @@ namespace TestFunctionallity
             //mng.DBExecuteRecordset(stm,false);
             var db = new DBDriver.DBConnect();
             var c=db.Count("employeelist");
-            var dt = db.Select();
+            var dt = db.Select("employeelist");
             Assert.AreEqual(c, 151);
         }
     }
