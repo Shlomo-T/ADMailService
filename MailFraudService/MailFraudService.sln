@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{15172561-F651-4639-922B-AEB7DE16C44F}"
 EndProject
@@ -19,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLManager", "MLManager\MLManager.csproj", "{D74BA2C5-7315-4DFF-BD75-01A14D8200B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFunctionallity", "TestFunctionallity\TestFunctionallity.csproj", "{92436716-2D9E-4B2A-88F8-CFC78339D98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{566FC338-E392-4804-A358-0848A5E3BC89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{92436716-2D9E-4B2A-88F8-CFC78339D98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92436716-2D9E-4B2A-88F8-CFC78339D98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92436716-2D9E-4B2A-88F8-CFC78339D98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566FC338-E392-4804-A358-0848A5E3BC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566FC338-E392-4804-A358-0848A5E3BC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566FC338-E392-4804-A358-0848A5E3BC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566FC338-E392-4804-A358-0848A5E3BC89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{3E5FAEF2-D2A6-4818-B38D-7E3D6D8B16C4} = {15172561-F651-4639-922B-AEB7DE16C44F}
 		{2CA0B2F2-634A-41F9-97E0-7C021C5F0677} = {493ED98B-4D60-4839-9384-B0E69A553549}
 		{D74BA2C5-7315-4DFF-BD75-01A14D8200B7} = {493ED98B-4D60-4839-9384-B0E69A553549}
+		{566FC338-E392-4804-A358-0848A5E3BC89} = {493ED98B-4D60-4839-9384-B0E69A553549}
 	EndGlobalSection
 EndGlobal
