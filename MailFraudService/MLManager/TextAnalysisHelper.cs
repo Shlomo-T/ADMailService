@@ -82,6 +82,12 @@ namespace MLManager
             if (!string.IsNullOrEmpty(text))
             {
                 ans = new List<string>(text.Split('\n'));
+
+                for (int i = 0; i < ans.Count; i++)
+                {
+                    ans[i] = ans[i].Trim();
+                }
+
                 while (ans.Contains(""))
                 {
                     ans.Remove("");
