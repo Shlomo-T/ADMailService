@@ -16,16 +16,16 @@ namespace MLManager
         **/
 
 
-            /*
-                Remove new lines from the text and then spliting by dot
-              */
+
 
         public static void  Analyze(string txt)
         {
 
         }
 
-
+        /*
+             Remove new lines from the text and then spliting by dot
+        */
         public static List<string> SplitByDot(string txt)
         {
 
@@ -74,7 +74,7 @@ namespace MLManager
 
 
         /* 
-             split the text by new line 
+             Split the text by new line 
         */
         public static List<string> SplitByNewLine(string text)
         {
@@ -82,6 +82,12 @@ namespace MLManager
             if (!string.IsNullOrEmpty(text))
             {
                 ans = new List<string>(text.Split('\n'));
+
+                for (int i = 0; i < ans.Count; i++)
+                {
+                    ans[i] = ans[i].Trim();
+                }
+
                 while (ans.Contains(""))
                 {
                     ans.Remove("");
