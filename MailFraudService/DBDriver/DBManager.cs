@@ -362,7 +362,7 @@ namespace DBDriver
         //Select statement
         public DataTable Select(string target)
         {
-            string query = "SELECT * FROM employeelist";
+            string query = "SELECT * FROM {0}" ;
             if (string.IsNullOrEmpty(target))
             {
                 //error

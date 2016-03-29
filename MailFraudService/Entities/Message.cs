@@ -12,17 +12,19 @@ namespace Entities
         public double wordAVG { get; set; }
         public double tokenRaitio { get; set; }
         public DateTime timeDate { get; set; }
-        public double subjectAVG { get; set; }
-        public double sentanceNumberAVG { get; set; }
+        public double subjectWordCount { get; set; }
+        public double sentanceCount { get; set; }
+        public int SpellMistakeCount { get; set; }
 
-        public Message(double sa, double wa, double tr, DateTime td, double sua, double sna)
+        public Message(double sa, double wa, double tr, DateTime td, double swc, double sc,int smc)
         {
             this.sentanceAVG = sa;
             this.wordAVG = wa;
             this.tokenRaitio = tr;
             this.timeDate = td;
-            this.subjectAVG = sua;
-            this.sentanceNumberAVG = sna;
+            this.subjectWordCount = swc;
+            this.sentanceCount = sc;
+            this.SpellMistakeCount = smc;
         }
 
     }

@@ -28,5 +28,36 @@ namespace MLManager
             return UserList;
 
         }
+
+        public static void LoadMessagePerUser(User user)
+        {
+            var db = new DBDriver.DBConnect();
+            string sender = "'" + user.email + "'";
+            var dt = db.Select("message where sender=" + sender);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string body = dt.Rows[i].ItemArray[5].ToString();
+                string subject = dt.Rows[i].ItemArray[4].ToString();
+                string date = dt.Rows[i].ItemArray[2].ToString();
+
+                List<string> bodyAfterSplit = TextAnalysisHelper.SplitByDot(body);
+
+                List<List<string>> wordsPerSent = TextAnalysisHelper.WordsPerSentence(bodyAfterSplit);
+
+                double sentAVG = TextAnalysisHelper.GetSentenceAVG(wordsPerSent);
+
+                Dictionary<string, int> wordsDict = TextAnalysisHelper.CountWords(wordsPerSent);
+
+                double wordAVG = TextAnalysisHelper.GetWordAVG(wordsDict);
+                double token = TextAnalysisHelper.GetTokenRatio(wordsDict);
+                double subjectWordCount = subject.Split(' ').Length;
+                int mistakeCount = TextAnalysisHelper.CheckSpell(body);
+
+                Message msg = new Message(sentAVG, wordAVG, token, DateTime.Parse(date), subjectWordCount, bodyAfterSplit.Count,mistakeCount);
+                user.sentMail.Add(msg);
+
+            }
+
+        }
     }
 }
