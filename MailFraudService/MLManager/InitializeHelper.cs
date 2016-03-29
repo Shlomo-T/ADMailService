@@ -51,7 +51,7 @@ namespace MLManager
                 double wordAVG = TextAnalysisHelper.GetWordAVG(wordsDict);
                 double token = TextAnalysisHelper.GetTokenRatio(wordsDict);
                 double subjectWordCount = subject.Split(' ').Length;
-                int mistakeCount = TextAnalysisHelper.CheckSpell(body);
+                int mistakeCount = 0;
 
                 Message msg = new Message(sentAVG, wordAVG, token, DateTime.Parse(date), subjectWordCount, bodyAfterSplit.Count,mistakeCount);
                 user.sentMail.Add(msg);

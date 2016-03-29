@@ -5,6 +5,8 @@ using MySql.Data.MySqlClient;
 using MLManager;
 using Entities;
 using System.Collections.Generic;
+using System.Data;
+using ProbabilityFunctions;
 
 namespace TestFunctionallity
 {
@@ -20,7 +22,45 @@ namespace TestFunctionallity
             //string stm = "SELECT * FROM message";
             //mng.DBExecuteRecordset(stm,false);
             List<User> a = InitializeHelper.LoadUsers();
-            InitializeHelper.LoadMessagePerUser(a[0]);
+            for(int i=0;i<4;i++)
+            {
+                try
+                {
+                    InitializeHelper.LoadMessagePerUser(a[i]);
+                }
+
+                catch { }
+            }
+
+            DataTable table = new DataTable();
+            table.Columns.Add("Mail");
+            table.Columns.Add("SentAve", typeof(double));
+            table.Columns.Add("WordAVG", typeof(double));
+            table.Columns.Add("Token", typeof(double));
+            table.Columns.Add("Subject", typeof(double));
+            table.Columns.Add("SentNumber", typeof(double));
+
+
+                try
+                {
+                    for (int j = 0; j < a[0].sentMail.Count*0.6; j++)
+                    {
+                        table.Rows.Add("YES", a[0].sentMail[j].sentanceAVG, a[0].sentMail[j].wordAVG, a[0].sentMail[j].tokenRaitio, a[0].sentMail[j].subjectWordCount, a[0].sentMail[j].sentanceCount);
+                        
+                    }
+                for (int j = 0; j < a[3].sentMail.Count * 0.6; j++)
+                {
+                    table.Rows.Add("NO", a[3].sentMail[j].sentanceAVG, a[3].sentMail[j].wordAVG, a[3].sentMail[j].tokenRaitio, a[3].sentMail[j].subjectWordCount, a[3].sentMail[j].sentanceCount);
+
+                }
+            }
+
+                catch { }
+            
+
+            Classifier classifier = new Classifier();
+            classifier.TrainClassifier(table);
+            string d = classifier.Classify(new double[] { a[1].sentMail[7].sentanceAVG, a[1].sentMail[7].wordAVG, a[1].sentMail[7].tokenRaitio, a[1].sentMail[7].subjectWordCount, a[1].sentMail[7].sentanceCount });
             int b = 0;
         }
 

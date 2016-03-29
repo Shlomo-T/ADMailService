@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classifier.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="InitializeHelper.cs" />
     <Compile Include="NaiveBayesLearner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
