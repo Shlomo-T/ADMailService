@@ -63,6 +63,10 @@
       <Project>{2ca0b2f2-634a-41f9-97e0-7c021c5f0677}</Project>
       <Name>DBDriver</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{441c8c3b-ea17-4e24-a59b-ebc77831b76b}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MLManager\MLManager.csproj">
       <Project>{d74ba2c5-7315-4dff-bd75-01a14d8200b7}</Project>
       <Name>MLManager</Name>

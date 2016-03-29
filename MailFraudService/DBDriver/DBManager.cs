@@ -229,7 +229,7 @@ namespace DBDriver
             server = "localhost";
             database = "enron";
             uid = "root";
-            password = "Shlomo";
+            password = "vcGN2108@";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

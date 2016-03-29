@@ -13,14 +13,16 @@ namespace Entities
         public double tokenRaitio { get; set; }
         public DateTime timeDate { get; set; }
         public double subjectAVG { get; set; }
+        public double sentanceNumberAVG { get; set; }
 
-        public Message(double sa, double wa, double tr, DateTime td, double sua)
+        public Message(double sa, double wa, double tr, DateTime td, double sua, double sna)
         {
             this.sentanceAVG = sa;
             this.wordAVG = wa;
             this.tokenRaitio = tr;
             this.timeDate = td;
             this.subjectAVG = sua;
+            this.sentanceNumberAVG = sna;
         }
 
     }

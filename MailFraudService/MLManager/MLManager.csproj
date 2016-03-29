@@ -44,12 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InitializeHelper.cs" />
     <Compile Include="NaiveBayesLearner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextAnalysisHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBDriver\DBDriver.csproj">
+      <Project>{2ca0b2f2-634a-41f9-97e0-7c021c5f0677}</Project>
+      <Name>DBDriver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{441c8c3b-ea17-4e24-a59b-ebc77831b76b}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
