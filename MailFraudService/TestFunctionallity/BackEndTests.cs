@@ -22,7 +22,7 @@ namespace TestFunctionallity
             //string stm = "SELECT * FROM message";
             //mng.DBExecuteRecordset(stm,false);
             List<User> a = InitializeHelper.LoadUsers();
-            for(int i=0;i<4;i++)
+            for(int i=0;i<20;i++)
             {
                 try
                 {
@@ -41,27 +41,47 @@ namespace TestFunctionallity
             table.Columns.Add("SentNumber", typeof(double));
 
 
-                try
+            try
+            {
+                for (int j = 0; j < 600; j++)
                 {
-                    for (int j = 0; j < a[0].sentMail.Count*0.6; j++)
-                    {
-                        table.Rows.Add("YES", a[0].sentMail[j].sentanceAVG, a[0].sentMail[j].wordAVG, a[0].sentMail[j].tokenRaitio, a[0].sentMail[j].subjectWordCount, a[0].sentMail[j].sentanceCount);
-                        
-                    }
-                for (int j = 0; j < a[3].sentMail.Count * 0.6; j++)
-                {
-                    table.Rows.Add("NO", a[3].sentMail[j].sentanceAVG, a[3].sentMail[j].wordAVG, a[3].sentMail[j].tokenRaitio, a[3].sentMail[j].subjectWordCount, a[3].sentMail[j].sentanceCount);
+                    table.Rows.Add("YES", a[0].sentMail[j].sentanceAVG, a[0].sentMail[j].wordAVG, 
+                        a[0].sentMail[j].tokenRaitio, a[0].sentMail[j].subjectWordCount, a[0].sentMail[j].sentanceCount);
 
                 }
+
+                for (int i = 1; i < 100; i++)
+                {
+                    for (int j = 0; j < a[i].sentMail.Count; j++)
+                    {
+                        if (a[i].sentMail.Count > 0)
+                        {
+                            table.Rows.Add("NO", a[i].sentMail[j].sentanceAVG, a[i].sentMail[j].wordAVG,
+                                a[i].sentMail[j].tokenRaitio, a[i].sentMail[j].subjectWordCount, a[i].sentMail[j].sentanceCount);
+                        }
+                    }
+                }
+
             }
+            
 
                 catch { }
             
 
             Classifier classifier = new Classifier();
             classifier.TrainClassifier(table);
-            string d = classifier.Classify(new double[] { a[1].sentMail[7].sentanceAVG, a[1].sentMail[7].wordAVG, a[1].sentMail[7].tokenRaitio, a[1].sentMail[7].subjectWordCount, a[1].sentMail[7].sentanceCount });
-            int b = 0;
+            int count = 0;
+            for (int i = 601; i < 1116; i++)
+            {
+                string d = classifier.Classify(new double[] { a[0].sentMail[i].sentanceAVG, a[0].sentMail[i].wordAVG,
+                    a[0].sentMail[i].tokenRaitio, a[0].sentMail[i].subjectWordCount, a[0].sentMail[i].sentanceCount });
+                if (d.Equals("YES"))
+                {
+                    count++;
+                }
+            }
+            double b = (double)count /(double)516;
+            int p = 0;
         }
 
         [TestMethod]
