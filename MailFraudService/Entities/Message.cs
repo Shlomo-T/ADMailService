@@ -15,8 +15,9 @@ namespace Entities
         public double subjectWordCount { get; set; }
         public double sentanceCount { get; set; }
         public int SpellMistakeCount { get; set; }
+        public string Body { get; set; }
 
-        public Message(double sa, double wa, double tr, DateTime td, double swc, double sc,int smc)
+        public Message(double sa, double wa, double tr, DateTime td, double swc, double sc,int smc,string body)
         {
             this.sentanceAVG = sa;
             this.wordAVG = wa;
@@ -25,6 +26,7 @@ namespace Entities
             this.subjectWordCount = swc;
             this.sentanceCount = sc;
             this.SpellMistakeCount = smc;
+            this.Body = body;
         }
 
     }

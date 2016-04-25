@@ -53,7 +53,7 @@ namespace MLManager
                 double subjectWordCount = subject.Split(' ').Length;
                 int mistakeCount = 0;
 
-                Message msg = new Message(sentAVG, wordAVG, token, DateTime.Parse(date), subjectWordCount, bodyAfterSplit.Count,mistakeCount);
+                Message msg = new Message(sentAVG, wordAVG, token, DateTime.Parse(date), subjectWordCount, bodyAfterSplit.Count,mistakeCount,body);
                 user.sentMail.Add(msg);
 
             }
