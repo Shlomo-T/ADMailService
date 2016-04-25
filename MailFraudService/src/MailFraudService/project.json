@@ -39,6 +39,8 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
+        "DBDriver": "1.0.0-*",
+        "Entities": "1.0.0-*",
         "log4net": "2.0.5"
       }
     },
